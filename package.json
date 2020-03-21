@@ -1,0 +1,17 @@
+{
+  "name": "db-connector",
+  "version": "1.0.0",
+  "description": "Simple nodejs utility to start/stop RDS db instance",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ketan Saxena<ksaxena@grepruy.io>",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.666.0",
+    "dotenv": "^8.2.0",
+    "node-cron": "^2.0.3"
+  }
+}
