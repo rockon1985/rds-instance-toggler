@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 const defaultId = process.env.INSANCE_ID;
 
 // scheduling CRON to stop the db in every 3 hours
-cron.schedule('* 2 * * *', () => {
+cron.schedule('0 0 */2 * * *', () => {
   console.log('[CRON JOB]: Execution at ' + new Date());
   toggleInstance(defaultId, 'stop')
     .then(data => console.log('success ', data))
@@ -28,7 +28,7 @@ http.createServer((req, res) => {
 
   if(path === '/start') {
     toggleInstance(id, 'start')
-      .then(data => respond.ok(res, data))
+      .then(data => respond.ok(res, data, true))
       .catch(err => respond.error(res, err));
   } else if (path === '/stop') {
     toggleInstance(id, 'stop')

@@ -1,6 +1,6 @@
 const respond = {
-  ok: (res, result) => {
-    res.write(`<h3>Instance Started</h3>
+  ok: (res, result, start) => {
+    res.write(`<h3>Instance ${start ? 'Started' : 'Stopped'}</h3>
       <p style="white-space: pre-wrap; background: aliceblue">${JSON.stringify(result, null, ' ')}</p>`);
     res.end();
   },
