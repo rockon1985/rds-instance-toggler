@@ -5,7 +5,7 @@ const { URLSearchParams } = require('url');
 const respond = require('./responder');
 const cron = require('node-cron');
 
-AWS.config.update({region : 'ap-south-1'});
+AWS.config.update({region : process.env.AWS_REGION || 'ap-south-1'});
 
 const rds = new AWS.RDS({ apiVersion: '2014-10-31' });
 const port = process.env.PORT || 3000;
